@@ -29,7 +29,7 @@ const { createApp } = Vue
         },
 
         generateEmails(n){
-            array = [];
+            this.emails = [];
             for(let i = 0; i < n; i++){
                 
                 axios
