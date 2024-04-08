@@ -36,12 +36,11 @@ const { createApp } = Vue
                 .get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then((res)=>{
                     
-                    array.push(res.data.response);
+                    this.emails.push(res.data.response);
+                    console.log(this.emails);
                 })
-                for(let j = 0; j < array.length; i++){
-                    this.emails.push(array[j]);
-                 }
-             }
+                
+            }
 
              
            
