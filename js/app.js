@@ -29,22 +29,28 @@ const { createApp } = Vue
         },
 
         generateEmails(n){
-            this.emails = [];
+            arrayEmails = [];
+            let counterEmail = 0;
             for(let i = 0; i < n; i++){
                 
                 axios
                 .get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then((res)=>{
                     
-                    this.emails.push(res.data.response);
-                    console.log(this.emails);
+                    arrayEmails.push(res.data.response);
+
+                    counterEmail++;
+
+                    if(counterEmail === n){
+                        this.emails = arrayEmails;
+                    }
+
+
+                    
                 })
                 
             }
+        },
 
-             
-           
-            
-        }
     }
   }).mount('#app')
